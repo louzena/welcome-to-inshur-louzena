@@ -5,5 +5,6 @@ export class UserProfile {
     public dob : string;
     public email : string;
     public aboutText : string;
+    public passionsText : string;
     
 }

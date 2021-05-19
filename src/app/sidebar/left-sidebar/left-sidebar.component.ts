@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserProfile } from 'src/app/shared/model/user/UserProfile.model';
 
 @Component({
   selector: 'app-left-sidebar',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-sidebar.component.css']
 })
 export class LeftSidebarComponent implements OnInit {
+
+  @Input() userProfile : UserProfile;
 
   constructor() { }
 

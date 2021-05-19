@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserProfile } from '../shared/model/user/UserProfile.model';
 import { UserProfileService } from '../shared/services/user-profile.service';
 
@@ -9,15 +9,7 @@ import { UserProfileService } from '../shared/services/user-profile.service';
 })
 export class UserInfoComponent implements OnInit {
 
-  userProfile : UserProfile;
-
-  constructor(private userProfileService: UserProfileService) { 
-
-    this.userProfileService.getUserDetails().subscribe(data => {
-      console.log(data);     
-      this.userProfile = data;       
-    });
-  }
+  @Input() userProfile : UserProfile;
 
   ngOnInit(): void {
   }

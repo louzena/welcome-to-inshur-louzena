@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ContentChild, ElementRef, Input, OnInit } from '@angular/core';
 import { UserProfile } from 'src/app/shared/model/user/UserProfile.model';
 import { UserProfileService } from '../../shared/services/user-profile.service';
 
@@ -9,15 +9,9 @@ import { UserProfileService } from '../../shared/services/user-profile.service';
 })
 export class AboutComponent implements OnInit {
 
-  userProfile : UserProfile;
+  @Input() aboutText : string;
 
-  constructor(private userProfileService: UserProfileService) { 
-
-    this.userProfileService.getUserDetails().subscribe(data => {
-      console.log(data);     
-      this.userProfile = data;       
-    });
-  }
+  @ContentChild('contentParagraph', {static: true}) paragraph : ElementRef;
 
   ngOnInit(): void {
   }

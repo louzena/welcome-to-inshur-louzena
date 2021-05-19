@@ -1,10 +1,10 @@
 export class UserProfile {
 
-    public userName : string;
+    public name : string;
     public jobTitle : string;
     public dob : string;
     public email : string;
-    public aboutText : string;
-    public passionsText : string;
+    public about : string;
+    public interests : string;
     
 }

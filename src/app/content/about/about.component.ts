@@ -1,6 +1,4 @@
 import { Component, ContentChild, ElementRef, Input, OnInit } from '@angular/core';
-import { UserProfile } from 'src/app/shared/model/user/UserProfile.model';
-import { UserProfileService } from '../../shared/services/user-profile.service';
 
 @Component({
   selector: 'app-about',

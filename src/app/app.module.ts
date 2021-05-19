@@ -14,6 +14,8 @@ import { SocialMediaComponent } from './social-media/social-media.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { QuoteComponent } from './widgets/quote/quote.component';
 import { RightSidebarComponent } from './sidebar/right-sidebar/right-sidebar.component';
+import { ContactFormComponent } from './content/contact-form/contact-form.component';
+import { SkillsInfoComponent } from './content/skills-info/skills-info.component';
 @NgModule({
   declarations: [
     AppComponent,    
@@ -26,7 +28,9 @@ import { RightSidebarComponent } from './sidebar/right-sidebar/right-sidebar.com
     SocialMediaComponent,
     UserInfoComponent,
     QuoteComponent,
-    RightSidebarComponent
+    RightSidebarComponent,
+    ContactFormComponent,
+    SkillsInfoComponent
   ],
   imports: [
     BrowserModule,

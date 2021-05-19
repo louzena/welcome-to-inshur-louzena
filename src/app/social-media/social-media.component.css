@@ -1,0 +1,26 @@
+.socialMediaLinks a {
+    font-size: 26px;
+    margin: 0 10px 0 0;
+    color: #000000;
+    text-decoration: none;
+}
+
+.socialMediaLinks a:hover { 
+    color: #673ab7; 
+}
+
+.socialMediaLinks a.fa-twitter { 
+    color: #00aced;
+}
+.socialMediaLinks a.fa-facebook-f { 
+    color: #3b5998; 
+}
+.socialMediaLinks a.fa-linkedin { 
+    color: #0e76a8; 
+}
+.socialMediaLinks a.fa-instagram { 
+    color: #8a3ab9; 
+}
+.socialMediaLinks a.fa-google-plus-g { 
+    color: #d34836; 
+}

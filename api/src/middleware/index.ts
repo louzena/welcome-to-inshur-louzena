@@ -9,14 +9,16 @@ const debug = require('debug')('welcome-api');
 
 // Setup cors
 middleware.use(cors());
-middleware.use('/quote',
+
+
+middleware.use('/api/quote',
     createProxyMiddleware(
-        { target: 'https://zenquotes.io/api/today',         
+        { target: 'https://zenquotes.io',         
          logLevel : 'debug',
          changeOrigin: true,
-         secure: false
+         secure: false,
+         pathRewrite: function (path, req) { return path.replace('/quote', '') }
         }));
-
 
 
 export default middleware;

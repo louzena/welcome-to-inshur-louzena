@@ -6,3 +6,12 @@
     z-index: 10;  
     
 }
+
+.profile-img:hover {
+    transform: scale(1.2);
+}
+
+.left-sidebar {
+    margin-top: 150px;
+    text-align: center;
+}

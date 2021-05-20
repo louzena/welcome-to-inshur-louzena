@@ -1,6 +1,21 @@
-<div class="col-md-12 text-center">    
-    <h2>Quote of the Day</h2>
-    <h4 class="lead">May 19, 2021</h4>
-    <h4 class="font-italic">
-        <blockquote>“We suffer more often in imagination than in reality.” — <footer>Seneca</footer></blockquote></h4>
-</div>
+<!-- <div class="col-md-12 text-center">    
+    <h2>Inspirational Quote</h2> 
+    <h4 *ngIf="quoteFreq === 'today'" class="lead"> {{ todayDateString }} </h4>
+    <h4 class="font-italic" [innerHTML]="inspoQuote.quoteHtml"> </h4>        
+</div> -->
+
+
+<section id="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- <i class="fas fa-atom"></i> -->
+                <h2 style="white-space: nowrap;">Quote of the Day</h2>
+                <p style="text-align: center;" *ngIf="quoteFreq === 'today'" class="lead"> {{ todayDateString }} </p>
+                <p class="font-italic" [innerHTML]="inspoQuote.quoteHtml"> </p>  
+                <!-- Attribution  -->
+                <small> Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></small>
+            </div>
+        </div>
+    </div>
+</section>

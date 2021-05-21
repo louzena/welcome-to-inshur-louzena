@@ -9,30 +9,19 @@ import { QuotesService } from 'src/app/shared/services/quotes-services';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-
-  public static readonly RANDOM_FREQ : string = 'random';
-  public static readonly TODAY_FREQ : string = 'today';
+ 
 
   @Input() inspoQuote : Quote = new Quote();
-  @Input() quoteFreq: string = QuoteComponent.TODAY_FREQ;
+  @Input() quoteFreq: string = QuotesService.TODAY_FREQ;
   
   todayDateString : string = "";
 
-  constructor(private quotesService: QuotesService) { 
-
-    // this.todayDateString = formatDate(Date.now(),'MMMM dd, YYYY', 'en-US');
-    // console.log(this.quoteFreq);
-
-    // this.quotesService.getQuote(this.quoteFreq).subscribe(data => {
-    //   //console.log(data);     
-    //   this.inspoQuote = data;       
-    // });
-  }
+  constructor(private quotesService: QuotesService) {  }
 
   ngOnInit(): void {
 
     this.todayDateString = formatDate(Date.now(),'MMMM dd, YYYY', 'en-US');
-    console.log(this.quoteFreq);
+    //console.log(this.quoteFreq);
 
     this.quotesService.getQuote(this.quoteFreq).subscribe(data => {
       //console.log(data);     

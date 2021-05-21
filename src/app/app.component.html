@@ -7,7 +7,7 @@
               <ul class="navbar-nav ml-auto">
                   <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                   <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Skills</a></li>
-                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#skills">Interests</a></li>
+                  <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#interests">Interests</a></li>
                   <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
               </ul>
           </div>
@@ -18,72 +18,56 @@
   
     <div class="row">      
      
-      <div class="col-md-3 bg-light left-sidebar" >
+      <div id="leftSidebar" class="col-md-3 bg-light left-sidebar" >
           <app-left-sidebar [userProfile]="userProfile" ></app-left-sidebar>     
       </div>
      
-      <div id="content" class="col-md-6">            
+      <div id="content" class="col-md-6"> 
+          <section id="about" >
+            <app-about>
+                <!-- Projected content  --> 
+                <div [innerHTML]="userProfile.aboutHTML" ></div>            
+            </app-about> 
+          </section>
+          
+          <section  id="skills" class="bg-light">
+            <app-skills-info></app-skills-info>
+          </section> 
 
-        <app-about>
-            <!-- Projected content  -->
-            <!-- <p  class="lead">
-                    {{ userProfile.aboutText }}
-            </p>                     
-            <p> Passionately involved in Diversity and Recruitment </p>                  -->
-
-            <div [innerHTML]="userProfile.about" ></div>
-            
-        </app-about>
-      
-       <app-skills-info></app-skills-info>
-
-       <section id="contact" >
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                      <h2 class="mb-5">Interests </h2> 
-                      <p> {{ userProfile.interests }}</p>
+          <section id="interests" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Interests </h2> 
+                        <p> {{ userProfile.interests }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+          </section>
+    
+          <section id="contact" class="bg-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <h2>Contact Me</h2>
+                            <app-contact-form></app-contact-form>
+                        </div>
+                    </div>
+                </div>
+          </section>
 
-
-      <section id="contact" class="bg-light">
-          <div class="container">
-              <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                        <h2 class="mb-5">Contact Me</h2>
-                        <app-contact-form></app-contact-form>
-                  </div>
-              </div>
-          </div>
-      </section>
     </div>
 
     <div class="col-md-3 bg-light"  >
       <app-right-sidebar> </app-right-sidebar>
     </div>
-
-
-
-
-
-    
-
-      
-
-
   </div>
   
-
-
-
-
-
   
   <!-- Footer-->
   <footer class="py-5 bg-dark">
-      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; </p></div>
   </footer>
+
+  
   

@@ -15,7 +15,8 @@ export class AppComponent {
   constructor(private userProfileService: UserProfileService) { 
 
     this.userProfileService.getUserDetails().subscribe(data => {
-      console.log(data);     
+      //console.log(data);    
+      // Get user details at start-up 
       this.userProfile = data;       
     });
   }

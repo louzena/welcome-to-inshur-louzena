@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UserProfile } from '../model/user/UserProfile.model';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { Quote } from '../model/quotes/Quote.model';
-import { JsonPipe } from '@angular/common';
 
 @Injectable({
     providedIn: 'root',
 })
+
+
 
 export class QuotesService {
 
@@ -16,19 +16,21 @@ export class QuotesService {
     public static readonly TODAY_FREQ : string = 'today';
 
     private quoteFreq : string = QuotesService.TODAY_FREQ; // default
-    //private quotesURL : string =  `/api/quote/${this.quoteFreq}`;
-    
+   
 
     constructor(private httpClient : HttpClient) {}
 
-    
+    /**
+     * Gets an Inspirational quote based on the frequency param
+     * @param quoteFrequency determines the frequency of quotes each time the service is called. 'Random' for
+     * a new quote on each request. 'Today' for the quote of the day (refreshed at midnight server time). Optional
+     * parameter. Default is 'today'
+     * @returns Observable<Quote>
+     */
     getQuote(quoteFrequency? : string) : Observable<Quote>{
 
         if (quoteFrequency) this.quoteFreq = quoteFrequency;
-        var quotesURL : string =  `/api/quote/${this.quoteFreq}`;
-
-        console.log(quoteFrequency);
-        console.log(quotesURL);
+        var quotesURL : string =  `/api/quote/${this.quoteFreq}`;        
 
         return this.httpClient
             .get(quotesURL)
@@ -41,10 +43,15 @@ export class QuotesService {
                         quote.quoteHtml = response.h;
                         quote.quoteText = response.q;  
                         return quote;
-                    })
+                    }),
+                    catchError(this.errorHandler)
                    
                 )
         
     }
 
+    errorHandler(error: HttpErrorResponse) {
+        return throwError(error.message || "server error.");
+    }
+    
 }

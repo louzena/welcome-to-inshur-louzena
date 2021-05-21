@@ -28,7 +28,9 @@
               "node_modules/@fortawesome/fontawesome-free/css/all.css",          
               "src/styles.css"              
             ],
-            "scripts": [     
+            "scripts": [                
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/startbootstrap-scrolling-nav/dist/js/scripts.js"             
             ]
           },
           "configurations": {

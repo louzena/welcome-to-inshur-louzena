@@ -10,7 +10,7 @@ import { UserProfileService } from './shared/services/user-profile.service';
 
 
 export class AppComponent {
-  title = 'welcome-to-inshur-louzena';
+  title = 'Louise Zenasni';
 
   @Input () userProfile : UserProfile = new UserProfile();
 

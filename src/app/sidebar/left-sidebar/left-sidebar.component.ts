@@ -9,6 +9,8 @@ import { UserProfile } from 'src/app/shared/model/user/UserProfile.model';
 export class LeftSidebarComponent implements OnInit {
 
   @Input() userProfile : UserProfile;
+  // TODO - Move to user profile service
+  profilePicPath : string = '../assets/louzena-pic.jpg';
 
   constructor() { }
 

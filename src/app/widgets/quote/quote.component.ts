@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Injectable, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Quote } from 'src/app/shared/model/quotes/Quote.model';
 import { QuotesService } from 'src/app/shared/services/quotes-services';
 
@@ -8,6 +8,8 @@ import { QuotesService } from 'src/app/shared/services/quotes-services';
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.css']
 })
+
+
 export class QuoteComponent implements OnInit {
  
 

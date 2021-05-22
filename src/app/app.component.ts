@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Injectable, Input } from '@angular/core';
 import { UserProfile } from './shared/model/user/UserProfile.model';
 import { UserProfileService } from './shared/services/user-profile.service';
 
@@ -7,6 +7,8 @@ import { UserProfileService } from './shared/services/user-profile.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
   title = 'welcome-to-inshur-louzena';
 

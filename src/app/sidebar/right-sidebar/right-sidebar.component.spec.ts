@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { QuoteComponent } from 'src/app/widgets/quote/quote.component';
 
 import { RightSidebarComponent } from './right-sidebar.component';
 
@@ -8,7 +9,7 @@ describe('RightSidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RightSidebarComponent ]
+      declarations: [ RightSidebarComponent, QuoteComponent ]
     })
     .compileComponents();
   });

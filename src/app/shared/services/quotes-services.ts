@@ -8,8 +8,6 @@ import { Quote } from '../model/quotes/Quote.model';
     providedIn: 'root',
 })
 
-
-
 export class QuotesService {
 
     public static readonly RANDOM_FREQ : string = 'random';

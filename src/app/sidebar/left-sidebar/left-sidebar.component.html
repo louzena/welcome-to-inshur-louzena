@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-center">
    
    <img
-    src="../assets/louzena-pic.jpg" 
+    [src]="profilePicPath" 
     class="img-responsive rounded-circle profile-img"
     style="max-height: 300px;">
 
     <div class="left-sidebar" >
-        <app-user-info [userProfile]="userProfile" ></app-user-info>
+        <app-user-info *ngIf="userProfile" [userProfile]="userProfile" ></app-user-info>
         <app-social-media></app-social-media>
     </div>
      

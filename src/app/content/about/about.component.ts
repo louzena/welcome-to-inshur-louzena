@@ -5,9 +5,7 @@ import { Component, ContentChild, ElementRef, Input, OnInit } from '@angular/cor
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit {
-
-  @Input() aboutText : string;
+export class AboutComponent implements OnInit { 
 
   @ContentChild('contentParagraph', {static: true}) paragraph : ElementRef;
 

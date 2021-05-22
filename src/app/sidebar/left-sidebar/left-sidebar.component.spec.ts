@@ -34,8 +34,6 @@ describe('LeftSidebarComponent', () => {
     fixture = TestBed.createComponent(LeftSidebarComponent);
     component = fixture.componentInstance;  
     fixture.detectChanges();
-
-   
   });
 
 

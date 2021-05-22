@@ -9,7 +9,7 @@ export class AboutComponent implements OnInit {
 
   @ContentChild('contentParagraph', {static: true}) paragraph : ElementRef;
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
 }

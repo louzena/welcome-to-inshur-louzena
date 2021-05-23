@@ -18,12 +18,16 @@ Feel free to use the Angular configuration of this project as a skeleton for you
 ## Getting Started 🛠
 
 ### Setup
-1. `git clone https://github.com/Inshur/welcome-to-inshur.git`
-1. `cd welcome-to-inshur`
+1. `git clone https://github.com/louzena/welcome-to-inshur-louzena.git`
+1. `cd welcome-to-inshur-louzena`
 1. `yarn install`
 1. `yarn start`
 
+Note:  You'll need to install Angular CLI if you haven't done so already:
 
+1. `npm install -g @angular/cli`
+
+The web app runs on `http://localhost:4200` and the proxy server runs on `http://localhost:4000`
 
 ## Project Technology Overview 🕵️‍♂️
 
@@ -62,72 +66,32 @@ Uses the Jasmine testing framework alongside Jest.
 
 ## Future Projects/Tasks
 
-This technical exercise has been thoroughly enjoyable. There are many more features that I have in mind (and unfortunately ran out of time) but hope to work on these in the future as a personal side-project:
+This technical exercise has been thoroughly enjoyable. There are many more features that I have in mind (and unfortunately ran out of time to implement) but hope to work on these in the future as a personal side-project:
 
 - Widgets 
     - Quote Widget - Further Enhancements on existing widget such as reload on demand and automatic reload at midnight for the next quote of the day. Configuration required for sharing with the community 
     - Google Map location widget - Create a new configurable widget that displays a Google map, pinpointing the visiting user's current location using HTML5 Geolocation API 
-    - Page Hit / Likes counter widget - Dynamic rolling counter of page hits / page likes (pre-requisiste)
+    - Page Hit / Likes counter widget - Dynamic rolling counter of page hits / page likes
     - News RSS Reader Widget - Widget that displays a news reader
     - Weather widget (current location) - Displays the weather of the user's current location using HTML5 Geoocation API.
 - Profile Page 
     - Further enhancements to the page, including connecting the 'Contact Me' form to a remote service
     - Adding more widgets to side panels once developed 
-    - Full web page responsiveness for mobile phones
+    - Full web responsive design for mobile phones
     - Profile picture - Moves to the top left of the scrollbar when you scroll down (with some fancy animation)
 - Remote Service 
     - Deployment of a remote service REST API; implementation of features described above (contact me, page hits etc)
 
 
+## Troubleshooting 
+
+As a point of reference, I have included a screenshot of what the profile page should look like located at 
+src/assets/profilePageScreenshot.PNG. (This is how it is rendered correctly). This is incase some dependencies aren't installed properly and the page looks unstyled and/or services aren't working as expected.
+
+Please feel free to contact me at louisezenasni@hotmail.com if any issues.
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# WelcomeToInshurLouzena
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

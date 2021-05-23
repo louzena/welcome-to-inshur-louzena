@@ -1,12 +1,10 @@
-import { Component, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AboutComponent } from './about.component';
 
-@Component({  
-    
-  template: '<app-about><span>testing content projection</span></app-about>'
-  
+@Component({   
+  template: '<app-about><span>testing content projection</span></app-about>'   
   })
 export class ContentProjectionTesterComponent {   
 }
@@ -19,7 +17,7 @@ describe('AboutComponent', () => {
 
    beforeEach(async () => {
      
-     await TestBed.configureTestingModule({
+     await TestBed.configureTestingModule({       
        declarations: [ AboutComponent, ContentProjectionTesterComponent ],    
        schemas: [NO_ERRORS_SCHEMA]
      })

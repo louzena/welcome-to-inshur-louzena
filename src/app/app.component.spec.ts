@@ -18,20 +18,15 @@ import { UserInfoComponent } from './user-info/user-info.component';
 
 describe('AppComponent', () => {
  
-  let userProfileService : UserProfileService;
-
   let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
-
-  let mockUserProfileService : MockUserProfileService
+  let fixture: ComponentFixture<AppComponent>;  
   
-  beforeEach(async () => { 
-    
+  beforeEach(async () => {     
 
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule    
         
       ],
       declarations: [
@@ -46,12 +41,11 @@ describe('AppComponent', () => {
         QuoteComponent,
         UserInfoComponent
       ],
+      // Injection of Mock service. Could also use Jest equivalent of Jasmine spies      
       providers: [       
-        { provide: userProfileService, useClass: MockUserProfileService }
-        
+        { provide: UserProfileService, useClass: MockUserProfileService },             
       ]
     }).compileComponents();   
-
     
   });
 
@@ -77,8 +71,9 @@ describe('AppComponent', () => {
 
   it('should retrieve a user Profile', () => {
     expect(component.userProfile).not.toBeNull();
-    //expect(component.userProfile.name).toEqual('Joe Bloggs');
+    expect(component.userProfile.name).toEqual('Joe Bloggs');
   });
+
 
 
 });

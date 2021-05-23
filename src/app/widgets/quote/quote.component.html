@@ -2,9 +2,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">                
-                <h2 >Quote of the Day</h2>
-                <p style="text-align: center;" *ngIf="quoteFreq === 'today'" class="lead"> {{ todayDateString }} </p>
-                <p class="font-italic" [innerHTML]="inspoQuote.quoteHtml"> </p>  
+                <h2 >Quote of the Day</h2>               
+                <p 
+                    id="dateParagraph"
+                    style="text-align: center;"
+                    *ngIf="quoteFreq === 'today'"
+                    class="lead">{{ todayDateString }}
+                </p>
+                <p 
+                    id="quoteParagraph"
+                    class="font-italic"
+                    [innerHTML]="inspoQuote.quoteHtml"> 
+                </p>  
                 <!-- Attribution  -->
                 <small> Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a></small>
             </div>

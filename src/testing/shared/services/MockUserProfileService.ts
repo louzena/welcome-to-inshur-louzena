@@ -1,11 +1,11 @@
+import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UserProfile } from "src/app/shared/model/user/UserProfile.model";
 
+@Injectable()
 export class MockUserProfileService {
 
-    public getUserDetails(): Observable<UserProfile> {
-
-        console.log('CALLED');
+    public getUserDetails(): Observable<UserProfile> {      
         let userProfile = new UserProfile();
         userProfile.name = 'Joe Bloggs';
         userProfile.jobTitle = 'Web Developer';

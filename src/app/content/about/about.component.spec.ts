@@ -20,7 +20,7 @@ describe('AboutComponent', () => {
    beforeEach(async () => {
      
      await TestBed.configureTestingModule({
-       declarations: [ ContentProjectionTesterComponent, AboutComponent ],    
+       declarations: [ AboutComponent, ContentProjectionTesterComponent ],    
        schemas: [NO_ERRORS_SCHEMA]
      })
      .compileComponents();
@@ -46,11 +46,6 @@ describe('AboutComponent', () => {
   });
 
   });
-
-//   // it('should contain ng-content for projected content', () => {
-//   //   ngContent = fixture.debugElement.query(By.css('ng-content'));
-//   //   expect(ngContent).not.toBeNull();
-//   // });
 
 
   

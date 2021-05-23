@@ -1,9 +1,20 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { UserProfile } from './shared/model/user/UserProfile.model';
 import { UserProfileService } from './shared/services/user-profile.service';
+import { MockUserProfileService } from '../testing/shared/services/MockUserProfileService';
+import { Mock } from 'protractor/built/driverProviders';
+import { LeftSidebarComponent } from './sidebar/left-sidebar/left-sidebar.component';
+import { AboutComponent } from './content/about/about.component';
+import { SkillsInfoComponent } from './content/skills-info/skills-info.component';
+import { ContactFormComponent } from './content/contact-form/contact-form.component';
+import { RightSidebarComponent } from './sidebar/right-sidebar/right-sidebar.component';
+import { HeaderComponent } from './header/header.component';
+import { SocialMediaComponent } from './social-media/social-media.component';
+import { QuoteComponent } from './widgets/quote/quote.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 describe('AppComponent', () => {
  
@@ -12,47 +23,45 @@ describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
-  let userProfileServiceSpy: jasmine.SpyObj<UserProfileService>;
-
-  let userProfile = new UserProfile();
-  userProfile.name = 'Joe Bloggs';
-  userProfile.jobTitle = 'Web Developer';
-  userProfile.email = 'joebloggs@someemail.com';
-  userProfile.dob = '1st January 1985';
-  userProfile.interests = 'Chess and computer games';
-  userProfile.aboutHTML = '<p> Lorem ipsum <i> Joe Bloggs <i/> </p>';
-
+  let mockUserProfileService : MockUserProfileService
   
-  beforeEach(async () => {
-
-    const spy = jasmine.createSpyObj('UserProfileService', ['getUserDetails']);
+  beforeEach(async () => { 
     
 
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientModule
+        
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        LeftSidebarComponent,
+        AboutComponent,
+        SkillsInfoComponent,
+        ContactFormComponent,
+        RightSidebarComponent,
+        HeaderComponent,
+        SocialMediaComponent,
+        QuoteComponent,
+        UserInfoComponent
       ],
       providers: [       
-        { provide: userProfileService, useValue: spy }
+        { provide: userProfileService, useClass: MockUserProfileService }
+        
       ]
-    }).compileComponents();
-   
-    userProfileService = TestBed.inject(UserProfileService);   
-    userProfileServiceSpy = TestBed.inject(UserProfileService) as jasmine.SpyObj<UserProfileService>; 
-    
-    spy.getUserDetails.and.returnValue(userProfile);
+    }).compileComponents();   
 
+    
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;   
-    component.userProfile = null; // set to null initially 
+    component = fixture.componentInstance;       
     fixture.detectChanges();
   });
+
+
 
   it('should create the app', () => {   
     expect(component).toBeTruthy();
@@ -63,16 +72,13 @@ describe('AppComponent', () => {
   });
 
   it('should use UserProfileService', () => {
-   
     expect(component.userProfile).not.toBeNull();
   });
 
+  it('should retrieve a user Profile', () => {
+    expect(component.userProfile).not.toBeNull();
+    //expect(component.userProfile.name).toEqual('Joe Bloggs');
+  });
 
 
-  // it('should render title', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement;
-  //   expect(compiled.querySelector('.content span').textContent).toContain('welcome-to-inshur-louzena app is running!');
-  // });
 });

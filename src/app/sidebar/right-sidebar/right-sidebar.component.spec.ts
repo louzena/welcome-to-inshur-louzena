@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { QuoteComponent } from 'src/app/widgets/quote/quote.component';
 
@@ -9,6 +10,7 @@ describe('RightSidebarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ HttpClientModule],
       declarations: [ RightSidebarComponent, QuoteComponent ]
     })
     .compileComponents();

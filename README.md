@@ -11,7 +11,7 @@ A NodeJS Express server runs alongside as a proxy, serving the application data 
 Angular configuration has been setup that handles the following :
 
 - Using a server as a proxy for all service calls from the app.
-- Integration with other frameworks such as Jest testing  
+- Integration with other frameworks such as Jest for testing  
 
 Feel free to use the Angular configuration of this project as a skeleton for your own purposes!
 
@@ -25,9 +25,13 @@ Feel free to use the Angular configuration of this project as a skeleton for you
 
 Note:  You'll need to install Angular CLI if you haven't done so already:
 
-1. `npm install -g @angular/cli`
+1. `npm install -g @angular/cli` 
 
 The web app runs on `http://localhost:4200` and the proxy server runs on `http://localhost:4000`
+
+### Testing 
+
+1. Run `npx jest` from the root src/
 
 ## Project Technology Overview 🕵️‍♂️
 
@@ -77,8 +81,8 @@ This technical exercise has been thoroughly enjoyable. There are many more featu
 - Profile Page 
     - Further enhancements to the page, including connecting the 'Contact Me' form to a remote service
     - Adding more widgets to side panels once developed 
-    - Full web responsive design for mobile phones
-    - Profile picture - Moves to the top left of the scrollbar when you scroll down (with some fancy animation)
+    - Full web responsive design for mobile phones (web app is responsive but needs some improvements)
+    - Profile picture - Move from the left sidebar to the top left of the toolbar when you scroll down (with some fancy animation)
 - Remote Service 
     - Deployment of a remote service REST API; implementation of features described above (contact me, page hits etc)
 

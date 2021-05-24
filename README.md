@@ -46,7 +46,7 @@ This profile page is written in Angular 11 with TypeScript. It showcases the fol
 
 ### Styling 
 
-- CSS - Uses Bootstrap and Start Bootstrap for styling with CSS.
+- CSS - Uses Bootstrap and Start Bootstrap for styling with CSS. Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar
 - Icons - Icons provided by Font Awesome.
 - Images - Freely usable header image provided by unsplash.com.
 

@@ -10,7 +10,6 @@ const debug = require('debug')('welcome-api');
 // Setup cors
 middleware.use(cors());
 
-
 middleware.use('/api/quote',
     createProxyMiddleware(
         { target: 'https://zenquotes.io',         

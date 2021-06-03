@@ -4,14 +4,16 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AboutComponent } from './about.component';
 
-// Angular Language Service bug - IDE compiler error for custom tag even with CUSTOM_ELEMENTS_SCHEMA
-// Compiles and builds fine though - commenting out for now. Will file a bug report 
+// Angular Language Service compiler error on below @Component template metadata
+// Error for custom <app-about> tag even with CUSTOM_ELEMENTS_SCHEMA added to testing module . Compiles and builds fine though 
+// Bug report here https://github.com/angular/angular/issues/42356 
 
-// @Component({   
-//   template: '<app-about><span>testing content projection</span></app-about>'   
-//   })
-// export class ContentProjectionTesterComponent {   
-// }
+@Component({   
+  template: '<app-about><span>testing content projection</span></app-about>' ,
+  jit: true  // Tells AOT compiler to ignore this class (see bug report above)
+  })
+export class ContentProjectionTesterComponent {   
+}
 
 describe('AboutComponent', () => {
    let component: AboutComponent;  
@@ -21,10 +23,8 @@ describe('AboutComponent', () => {
 
    beforeEach(async () => {
      
-     await TestBed.configureTestingModule({          
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA , NO_ERRORS_SCHEMA],
-      declarations: [AboutComponent],
-      imports: [RouterTestingModule]
+     await TestBed.configureTestingModule({      
+      declarations: [AboutComponent]
      })
      .compileComponents();     
    });
@@ -39,16 +39,14 @@ describe('AboutComponent', () => {
      expect(component).toBeTruthy();
    });
 
-   // See comment above - Angular Language service bug
-
-  //  it('it should project the content', () => {    
-  //   let text = 'testing';
-  //   let fixture: ComponentFixture<ContentProjectionTesterComponent> =
-  //    TestBed.createComponent(ContentProjectionTesterComponent);
+   it('it should project the content', () => {    
+    let text = 'testing content projection';
+    let fixture: ComponentFixture<ContentProjectionTesterComponent> =
+     TestBed.createComponent(ContentProjectionTesterComponent);
    
-  //   let innerHtml = fixture.debugElement.query(By.css('span')).nativeElement.innerHTML;
-  //   expect(innerHtml).toContain(text);
-  //   });
+    let innerHtml = fixture.debugElement.query(By.css('span')).nativeElement.innerHTML;
+    expect(innerHtml).toContain(text);
+    });
 
   });
 

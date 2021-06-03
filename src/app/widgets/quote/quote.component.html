@@ -2,11 +2,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">                
-                <h2 >Quote of the Day</h2>               
+                <h2 *ngIf="quoteFreq === 'today'; else randomHeading">Quote of the Day</h2>  
+                <ng-template #randomHeading > 
+                    <h2>Inspirational Quote</h2>
+                </ng-template>
                 <p 
+                    *ngIf="quoteFreq === 'today'" 
                     id="dateParagraph"
-                    style="text-align: center;"
-                    *ngIf="quoteFreq === 'today'"
+                    style="text-align: center;"                   
                     class="lead">{{ todayDateString }}
                 </p>
                 <p 

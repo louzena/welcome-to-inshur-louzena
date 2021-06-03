@@ -22,9 +22,12 @@ import { QuotesService } from 'src/app/shared/services/quotes-services';
 })
 export class QuoteComponent implements OnInit { 
 
+  public static readonly RANDOM : string = 'random';
+  public static readonly TODAY : string = 'today';  
+
   inspoQuote : Quote = new Quote();
   @Input() quoteFreq: string = QuotesService.TODAY_FREQ;
-  
+ 
   todayDateString : string = "";
 
   constructor(private quotesService: QuotesService) {  }
@@ -32,6 +35,11 @@ export class QuoteComponent implements OnInit {
   ngOnInit(): void {
 
     this.todayDateString = formatDate(Date.now(),'MMMM dd, YYYY', 'en-US');    
+    this.loadQuote();
+
+  }
+
+  loadQuote() { 
 
     this.quotesService.getQuote(this.quoteFreq).subscribe(data => {       
       this.inspoQuote = data;       
@@ -39,9 +47,9 @@ export class QuoteComponent implements OnInit {
 
   }
 
-  reloadQuote() { // TODO - reload new quote on demand
 
-  }
+
+  
 
 }
 
